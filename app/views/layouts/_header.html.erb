@@ -3,9 +3,11 @@
     <%= link_to image_tag("f_logo.png", alt: "Foods and drinks logo"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("static_pages.home.title") , root_path %></li>
+        <li><%= link_to t("static_pages.home.title"), root_path %></li>
+        <li><%= link_to t("layouts.header.products"), root_path %></li>
         <li><%= link_to t("static_pages.help.title"), "/static_pages/help" %></li>
-        <li><%= link_to t(".login"), "#" %></li>
+        <li><%= link_to t("sessions.new.login"), login_path %></li>
+        <li><%= link_to t("sessions.new.signup"), "#" %></li>
       </ul>
     </nav>
   </div>
