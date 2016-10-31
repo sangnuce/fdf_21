@@ -104,16 +104,16 @@ ActiveRecord::Schema.define(version: 20161028081352) do
     t.string   "email"
     t.string   "name"
     t.string   "phone"
-    t.string   "activate_digest"
+    t.string   "activation_digest"
     t.string   "password_digest"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
-    t.boolean  "admin",           default: false
+    t.boolean  "admin",             default: false
     t.string   "remember_digest"
-    t.boolean  "activated",       default: false
+    t.boolean  "activated",         default: false
     t.datetime "activated_at"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
