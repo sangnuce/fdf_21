@@ -2,6 +2,14 @@ en:
   layouts:
     header:
       login: "Login"
+      users: "Users"
+      categories: "Categories"
+      product: "Products"
+      order: "Orders"
+      logout: "Log out"
+      account: "Account"
+      profile: "Profile"
+      setting: "Setting"
     footer:
       name: "Project Foods and drinks"
     base_title: "Foods and drinks"
@@ -18,3 +26,12 @@ en:
     home:
       title: "Home"
       content: "This is home page"
+  sessions:
+    new:
+      login: "Log in"
+      email: "Email"
+      password: "Password"
+      new_user: "New user?"
+      signup: "Sign up"
+  flash:
+    invalid_login: "Invalid email/password combination"
