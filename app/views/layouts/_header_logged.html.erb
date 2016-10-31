@@ -5,7 +5,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user.admin? %>
           <li><%= link_to t("layouts.header.users"), "#" %></li>
-          <li><%= link_to t("layouts.header.categories"), "#" %></li>
+          <li><%= link_to t("layouts.header.categories"), admin_categories_path %></li>
           <li><%= link_to t("layouts.header.products"), "#" %></li>
           <li><%= link_to t("layouts.header.orders"), "#" %></li>
           <li><%= link_to t("layouts.header.logout"), logout_path, method: "delete" %></li>

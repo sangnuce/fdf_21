@@ -1,0 +1,9 @@
+<%= form_for admin_categories_path, method: :get do |f| %>
+  <div class="input-group">
+    <%= text_field_tag :name, params[:name], class: "form-control",
+      placeholder: t(".placeholder_category") %>
+    <span class="input-group-btn">
+      <%= f.submit t(".search"), class: "btn btn-default" %>
+    </span>
+  </div>
+<% end %>

@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: :edit
   resources :password_resets, except: [:index, :show, :destroy]
+  namespace :admin do
+    resources :categories, except: :show
+  end
 end

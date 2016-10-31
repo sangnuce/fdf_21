@@ -55,6 +55,12 @@ en:
     wrong_email: "Email address not found"
     reset_success: "Password has been reset."
     reset_expired: "Password reset has expired."
+    create_category_success: "Create category success."
+    delete_category_success: "Delete category success."
+    edit_category_success: "Edit category success."
+    category_not_found: "Category not found."
+    must_logged_in: "Please log in."
+    category_updated: "Category updated."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -78,3 +84,31 @@ en:
       forgot_password: "Forgot password"
       submit: "Submit"
     cant_empty: "can't be empty"
+  admin:
+    categories:
+      category:
+        edit: "Edit"
+        delete: "Delete"
+        food: "Food"
+        drink: "Drink"
+      index:
+        title: "Categories"
+        name: "Name"
+        classify: "Classify"
+        edit: "Edit"
+        delete: "Delete"
+        add_category: "Add new category"
+      search_form:
+        search: "Search"
+        placeholder_category: "Enter category name"
+      new:
+        title: "Add new category"
+        add_category: "Add new category"
+      edit:
+        title: "Edit category"
+        edit_category: "Edit category"
+      form:
+        name: "Name"
+        classify: "Classify"
+  data:
+    confirm: "Are you sure?"
