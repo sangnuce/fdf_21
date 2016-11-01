@@ -1,10 +1,8 @@
-<h1>Sample App</h1>
+<h1><%= t "mailer.active_account" %></h1>
 
-<p>Hi <%= @user.name %>,</p>
+<p><%= t "mailer.hi" %> <%= @user.name %>,</p>
 
-<p>
-Welcome to the Food and Drink website! Click on the link below to activate your account:
-</p>
+<p><%= t "mailer.active_message" %></p>
 
 <%= link_to t("mailer.activate"), edit_account_activation_url(@user.activation_token,
  email: @user.email) %>
