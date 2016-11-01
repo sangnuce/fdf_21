@@ -34,6 +34,8 @@ en:
       password: "Password"
       new_user: "New user?"
       signup: "Sign up"
+      remember_me: "Remember me on this computer"
+      forgot_password: "(forgot password)"
   users:
     new:
       title: "Sign up"
@@ -49,10 +51,30 @@ en:
     activated: "Account activated!"
     invalid_activation_link: "Invalid activation link"
     invalid_login: "Invalid email/password combination"
+    send_email_reset_success: "Email sent with password reset instructions"
+    wrong_email: "Email address not found"
+    reset_success: "Password has been reset."
+    reset_expired: "Password reset has expired."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
+    hi: "Hi"
+    activate_message: "Welcome to the Food and Drink website!
+      Click on the link below to activate your account:"
+    password_reset: "Password reset"
+    link_reset: "To reset your password click the link below:"
+    expire_mail_reset: "This link will expire in two hours."
+    mail_reset_message: "If you did not request your password to be reset,
+      please ignore this email and your password will stay as it is."
   shared:
     error_messages:
       form_contain: "The form contains"
       error: "error"
+  password_resets:
+    edit:
+      reset_password: "Reset password"
+      update_password: "Update password"
+    new:
+      forgot_password: "Forgot password"
+      submit: "Submit"
+    cant_empty: "can't be empty"
