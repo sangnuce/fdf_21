@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :find_product, only: :show
+
   def index
     @supports = Supports::Product.new params
 
@@ -13,6 +15,18 @@ class ProductsController < ApplicationController
       format.html {render :index}
       format.json {render json: @supports.categories}
       format.js
+    end
+  end
+
+  def show
+  end
+
+  private
+  def find_product
+    @product = Product.find_by id: params[:id]
+    if @product.nil?
+      flash[:danger] = t "flash.product_not_found"
+      redirect_to products_path
     end
   end
 end

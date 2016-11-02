@@ -1,0 +1,53 @@
+<% provide :title, @product.name %>
+
+<div class="row">
+  <div class="col-md-8 product-detail">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><%= link_to t(".home"), root_path %></li>
+          <li class="breadcrumb-item"><%= link_to @product.category.name,
+            products_path(category_id: @product.category.id),
+            class: "breadcrumb-item" %></li>
+          <li class="breadcrumb-item active"><%= @product.name %></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-4 product-picture">
+        <%= image_tag @product.picture, alt: @product.name if @product.picture? %>
+      </div>
+      <div class="col-md-9 col-sm-8">
+        <h1 class="title text-left text-uppercase"><%= @product.name %></h1>
+        <div class="price"><%= number_to_currency @product.price %></div>
+        <div class="rating"><%= t".rating" %>
+          <%= @product.rating %>/<%= Settings.ratings.max_rate %>
+          (<%= pluralize @product.ratings.count, t(".vote") %>)</div>
+          <%= form_tag product_path(@product), remote: true, class: "form-inline" do %>
+            <%= select_tag :rate,
+              options_for_select(Settings.ratings.min_rate..Settings.ratings.max_rate,
+              params[:rate]), class: "form-control" %>
+            <%= submit_tag t(".rate"), class: "btn-warning form-control" %>
+          <% end %>
+        <div class="add-to-cart">
+          <%= form_tag product_path(@product), remote: true, class: "form-inline" do %>
+            <%= number_field_tag :order_amount, params[:order_amount],
+              class: "form-control", min: Settings.carts.min_amount,
+              placeholder: t(".enter_a_number") %>
+            <%= submit_tag t(".add_to_cart"), class: "btn-primary form-control" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-12 description">
+        <h3 class="title"><%= t ".description" %></h3>
+        <div class="content">
+          <%= @product.description %>
+        </div>
+      </div>
+      <div class="col-md-12 comment">
+        <h3 class="title"><%= t ".comment" %></h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 cart">
+    <h3 class="title"><%= t ".cart" %></h3>
+  </div>
+</div>

@@ -15,7 +15,8 @@ User.create! name: "Customer", email: "customer@gmail.com",
     name = "Product #{i} in category #{n}"
     price = (rand 1..200) * 1000
     quantity = rand 0..100
-    description = Faker::Lorem.sentence 10
-    category.products.create! name: name, price: price, quantity: quantity, description: description
+    description = Faker::Lorem.sentence 150
+    category.products.create! name: name, price: price, quantity: quantity,
+      description: description
   end
 end

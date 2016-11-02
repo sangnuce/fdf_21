@@ -77,6 +77,17 @@ en:
       to: "To"
       sorting: "Sorting"
       enter_name: "Enter product name"
+      name: "Name"
+    show:
+      home: "Home"
+      add_to_cart: "Add to cart"
+      enter_a_number: "Enter a number"
+      rate: "Rate"
+      vote: "vote"
+      rating: "Rating"
+      description: "Description"
+      comment: "Comment"
+      cart: "Cart"
   flash:
     account_not_active: "Account not activated. Check your email for
       the activation link."
@@ -103,6 +114,7 @@ en:
     add_product_success: "Add product success."
     product_not_fount: "Product not found."
     update_product_success: "Update product success."
+    product_not_found: "Product not found."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
