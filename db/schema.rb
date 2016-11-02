@@ -80,12 +80,12 @@ ActiveRecord::Schema.define(version: 20161028081352) do
     t.string   "picture"
     t.integer  "price"
     t.integer  "quantity"
-    t.float    "rating"
+    t.float    "rating",      default: 0.0
     t.text     "description"
-    t.boolean  "status",      default: true
+    t.integer  "status",      default: 1
     t.integer  "category_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["name"], name: "index_products_on_name", unique: true
   end

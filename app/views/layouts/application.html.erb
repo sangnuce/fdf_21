@@ -6,7 +6,11 @@
   </head>
   <body>
     <% if logged_in? %>
-      <%= render "layouts/header_logged" %>
+      <% if current_user.admin? %>
+        <%= render "layouts/header_admin" %>
+      <% else %>
+        <%= render "layouts/header_customer" %>
+      <% end %>
     <% else %>
       <%= render "layouts/header" %>
     <% end %>

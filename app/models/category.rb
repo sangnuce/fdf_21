@@ -7,4 +7,8 @@ class Category < ApplicationRecord
   validates :classify, presence: true, inclusion: {in: classifies}
 
   scope :name_like, ->(name){where "name LIKE ?", "%#{name}%"}
+
+  def load_products number
+    products.available.order_desc.take number
+  end
 end
