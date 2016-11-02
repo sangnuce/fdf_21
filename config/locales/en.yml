@@ -61,6 +61,22 @@ en:
   products:
     product:
       detail: "Detail"
+    index:
+      title: "Products"
+    filter_form:
+      select_all: "All"
+      classify: "Classify"
+      category: "Category"
+      price: "Price"
+      rating: "Rating"
+      descending: "Descending"
+      ascending: "Ascending"
+      filter: "Filter"
+      price: "Price"
+      from: "From "
+      to: "To"
+      sorting: "Sorting"
+      enter_name: "Enter product name"
   flash:
     account_not_active: "Account not activated. Check your email for
       the activation link."

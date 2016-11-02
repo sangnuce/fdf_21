@@ -1,14 +1,19 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse navbar-customer">
   <div class="container">
-    <%= link_to image_tag("f_logo.png", alt: t("layouts.header.logo_alt")),
-      root_path, id: "logo" %>
-    <nav>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+        data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag("f_logo.png", alt: t("layouts.header.logo_alt")), root_path, id: "logo" %>
+    </div>
+    <nav class="collapse navbar-collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("layouts.header.users"), admin_users_path %></li>
-        <li><%= link_to t("layouts.header.categories"),
-          admin_categories_path %></li>
-        <li><%= link_to t("layouts.header.products"),
-          admin_products_path %></li>
+        <li><%= link_to t("layouts.header.categories"), admin_categories_path %></li>
+        <li><%= link_to t("layouts.header.products"), admin_products_path %></li>
         <li><%= link_to t("layouts.header.orders"), "#" %></li>
         <li><%= link_to t("layouts.header.logout"), logout_path,
           method: "delete" %></li>
