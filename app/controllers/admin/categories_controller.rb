@@ -6,11 +6,10 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = if category_name = params[:name]
-      Category.name_like(category_name)
-        .paginate page: params[:page], per_page: 10
+      Category.name_like category_name
     else
-      Category.all.paginate page: params[:page], per_page: 10
-    end
+      Category.all
+    end.paginate page: params[:page], per_page: 10
   end
 
   def new
