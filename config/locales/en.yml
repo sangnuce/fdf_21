@@ -46,6 +46,16 @@ en:
       name: "Name"
       phone: "Phone"
       password_confirmation: "Confirmation"
+      notice: "Change password (Leave blank if not change)"
+    show:
+      title: "User profile"
+      name: "Name"
+      email: "Email"
+      phone: "Phone"
+      edit_user: "Edit profile"
+    edit:
+      title: "Edit user profile"
+      edit_user: "Update profile"
   flash:
     remine_check_email: "Please check your email to activate your account."
     activated: "Account activated!"
@@ -61,6 +71,8 @@ en:
     category_not_found: "Category not found."
     must_logged_in: "Please log in."
     category_updated: "Category updated."
+    user_not_found: "User not found."
+    edit_user_success: "Edit user success."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
