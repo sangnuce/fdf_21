@@ -14,6 +14,11 @@
     <%= f.label t(".phone") %>
     <%= f.text_field :phone, class: "form-control" %>
   </div>
+  <% unless f.object.new_record? %>
+    <div class="alert alert-info">
+      <%= t ".notice" %>
+    </div>
+  <% end %>
   <div class="form-group">
     <%= f.label t(".password") %>
     <%= f.password_field :password, class: "form-control" %>

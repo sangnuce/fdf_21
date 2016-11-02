@@ -54,6 +54,10 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def current_user? user
+    self == user
+  end
+
   class << self
     def digest string
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -65,7 +69,6 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
   end
-
 
   private
   def downcase_email
