@@ -9,6 +9,9 @@ class User < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  scope :activated, ->{where activated: true}
+  scope :name_like, ->(name){where "name LIKE ?", "%#{name}%"}
+
   has_secure_password
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -21,6 +24,10 @@ class User < ApplicationRecord
     digest = send "#{attribute}_digest"
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password? token
+  end
+
+  def current_user? user
+    self == user
   end
 
   def remember

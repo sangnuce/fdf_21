@@ -62,6 +62,8 @@ en:
     product:
       detail: "Detail"
   flash:
+    account_not_active: "Account not activated. Check your email for
+      the activation link."
     remine_check_email: "Please check your email to activate your account."
     activated: "Account activated!"
     invalid_activation_link: "Invalid activation link"
@@ -76,8 +78,12 @@ en:
     category_not_found: "Category not found."
     must_logged_in: "Please log in."
     category_updated: "Category updated."
-    user_not_found: "User not found."
     edit_user_success: "Edit user success."
+    add_user_success: "Add user success."
+    update_user_success: "User updated."
+    delete_user: "User deleted."
+    user_not_found: "User not found."
+    cant_delete: "Can't delete."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -127,6 +133,30 @@ en:
       form:
         name: "Name"
         classify: "Classify"
+    users:
+      index:
+        title: "User management"
+        add_user: "Add user"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        role: "Role"
+      user:
+        admin: "admin"
+        customer: "customer"
+        edit: "Edit"
+        delete: "Delete"
+      new:
+        title: "Add user"
+        admin: "Admin"
+        customer: "Customer"
+        password: "Password"
+        password_confirmation: "Confirmation"
+      edit:
+        title: "Update user"
+      search_form:
+        search: "Search"
+        placeholder_user: "Enter name"
   data:
     confirm: "Are you sure?"
   number:
