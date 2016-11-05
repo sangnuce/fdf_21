@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161028081352) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
+    t.integer  "status", default: 1
     t.integer  "product_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -83,6 +84,7 @@ ActiveRecord::Schema.define(version: 20161028081352) do
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "rate"
+    t.integer  "status"
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
