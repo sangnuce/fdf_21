@@ -57,15 +57,6 @@ ActiveRecord::Schema.define(version: 20161028081352) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "product_images", force: :cascade do |t|
-    t.string   "image"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id", "image"], name: "index_product_images_on_product_id_and_image", unique: true
-    t.index ["product_id"], name: "index_product_images_on_product_id"
-  end
-
   create_table "product_suggests", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
