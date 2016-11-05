@@ -1,13 +1,17 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to image_tag("f_logo.png", alt: t("layouts.header.logo_alt")), root_path, id: "logo" %>
+    <%= link_to image_tag("f_logo.png", alt: t("layouts.header.logo_alt")),
+      root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("layouts.header.users"), "#" %></li>
-        <li><%= link_to t("layouts.header.categories"), admin_categories_path %></li>
-        <li><%= link_to t("layouts.header.products"), "#" %></li>
+        <li><%= link_to t("layouts.header.users"), admin_users_path %></li>
+        <li><%= link_to t("layouts.header.categories"),
+          admin_categories_path %></li>
+        <li><%= link_to t("layouts.header.products"),
+          admin_products_path %></li>
         <li><%= link_to t("layouts.header.orders"), "#" %></li>
-        <li><%= link_to t("layouts.header.logout"), logout_path, method: "delete" %></li>
+        <li><%= link_to t("layouts.header.logout"), logout_path,
+          method: "delete" %></li>
       </ul>
     </nav>
   </div>

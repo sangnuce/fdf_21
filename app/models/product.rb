@@ -11,6 +11,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_products
 
   scope :order_desc, ->{order created_at: :desc}
+  scope :name_like, ->(name){where "name LIKE ?", "%#{name}%"}
 
   mount_uploader :picture, PictureUploader
 
@@ -18,7 +19,7 @@ class Product < ApplicationRecord
   validates :quantity, presence: true, numericality:
     {greater_than_or_equal_to: 0}
   validate :picture_size
-  validates :picture, presence: true
+  validates :picture, presence: true, on: :create
 
   private
   def picture_size

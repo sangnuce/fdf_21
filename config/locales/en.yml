@@ -85,6 +85,8 @@ en:
     user_not_found: "User not found."
     cant_delete: "Can't delete."
     add_product_success: "Add product success."
+    product_not_fount: "Product not found."
+    update_product_success: "Update product success."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -159,8 +161,20 @@ en:
         search: "Search"
         placeholder_user: "Enter name"
     products:
+      index:
+        title: "Product management"
+        name: "Name"
+        image: "Image"
+        price: "Price"
+        quantity: "Quantity"
+        category: "Category"
+      product:
+        edit: "Edit"
+        delete: "Delete"
       new:
         title: "Add product"
+      edit:
+        title: "Edit product"
       form:
         name: "Name"
         price: "Price"
@@ -168,6 +182,9 @@ en:
         picture: "Picture"
         category: "Category"
         description: "Description"
+      search_form:
+        search: "Search"
+        placeholder_product: "Enter product name"
   picture:
     error_picture_size: "should be less than 5MB"
   data:

@@ -1,0 +1,36 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+
+<div class="row margin-bottom-10">
+  <div class="col-md-6">
+    <%= link_to t("admin.products.new.add_product"), new_admin_product_path,
+      class: "btn btn-primary" %>
+  </div>
+  <div class="col-md-6 pull-right">
+    <%= render "search_form" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover table-responsive table-striped
+      table-bordered table-products">
+      <thead>
+        <tr>
+          <th><%= t ".name" %></th>
+          <th><%= t ".image" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quantity" %></th>
+          <th><%= t ".category" %></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @products %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-12 text-center">
+    <%= will_paginate %>
+  </div>
+</div>
