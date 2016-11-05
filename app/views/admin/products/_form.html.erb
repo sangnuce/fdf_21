@@ -1,0 +1,30 @@
+<%= form_for @product, html: {multipart: true}, url: yield(:url_path) do |f| %>
+  <div class="form-group">
+    <%= render "shared/error_messages", object: f.object %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".price") %>
+    <%= f.number_field :price, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".quantity") %>
+    <%= f.number_field :quantity, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".picture") %>
+    <%= f.file_field :picture, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".category") %>
+    <%= f.select :category_id, options_for_select(@categories), {}, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".description") %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

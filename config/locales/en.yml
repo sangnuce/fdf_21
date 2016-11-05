@@ -84,6 +84,7 @@ en:
     delete_user: "User deleted."
     user_not_found: "User not found."
     cant_delete: "Can't delete."
+    add_product_success: "Add product success."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -157,6 +158,18 @@ en:
       search_form:
         search: "Search"
         placeholder_user: "Enter name"
+    products:
+      new:
+        title: "Add product"
+      form:
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        picture: "Picture"
+        category: "Category"
+        description: "Description"
+  picture:
+    error_picture_size: "should be less than 5MB"
   data:
     confirm: "Are you sure?"
   number:
