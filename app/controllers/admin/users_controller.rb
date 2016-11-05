@@ -6,7 +6,7 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = if user_name = params[:name]
-      User.name_like user_name
+      User.activated.name_like user_name
     else
       User.activated
     end.paginate page: params[:page], per_page: 10
