@@ -115,6 +115,7 @@ en:
     product_not_fount: "Product not found."
     update_product_success: "Update product success."
     product_not_found: "Product not found."
+    delete_product: "Product deleted."
   mailer:
     active_account: "Account activation"
     activate: "Activate"

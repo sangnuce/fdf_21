@@ -38,6 +38,15 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    if @product.update_attributes status: "not_available"
+      flash[:success] = t "flash.delete_product"
+      redirect_to admin_products_path
+    else
+      flash[:danger] = t "flash.cant_delete"
+    end
+  end
+
   private
   def product_params
     params.require(:product).permit Product::ATTRIBUTE_PARAMS

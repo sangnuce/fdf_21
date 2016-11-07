@@ -28,9 +28,16 @@ class Product < ApplicationRecord
   validate :picture_size
   validates :picture, presence: true, on: :create
 
+  after_update :update_child
+
   private
   def picture_size
     errors.add :picture, I18n.t("picture.error_picture_size") if
       picture.size > 5.megabytes
+  end
+
+  def update_child
+    self.comments.update_all status: "not_available"
+    self.ratings.update_all status: "not_available"
   end
 end
