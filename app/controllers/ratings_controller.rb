@@ -3,19 +3,15 @@ class RatingsController < ApplicationController
   before_action :find_product, only: :create
 
   def create
-    @rating = current_user.ratings.build product_id: params[:product_id],
+    @rating = current_user.ratings.build product: @product,
       rate: rating_params[:rate]
     if @rating.save
-      rate_count = @product.ratings.count
-      @product.rating = (@product.rating * rate_count + @rating.rate) / (rate_count + 1)
-      if @product.save
-        respond_to do |format|
-          format.html do
-            flash[:success] = t "flash.rate_success"
-            redirect_to @product
-          end
-          format.js
+      respond_to do |format|
+        format.html do
+          flash[:success] = t "flash.rate_success"
+          redirect_to @product
         end
+        format.js
       end
     end
   end

@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 20161028081352) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
-    t.integer  "status", default: 1
+    t.integer  "status",     default: 1
     t.integer  "product_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["product_id"], name: "index_comments_on_product_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end

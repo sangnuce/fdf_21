@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :password_resets, except: [:index, :show, :destroy]
   resources :users, only: [:show, :edit, :update]
+  resources :carts, only: :update
   resources :products, only: [:index, :show] do
     resources :ratings, only: :create
   end

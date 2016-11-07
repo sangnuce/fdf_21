@@ -1,0 +1,20 @@
+<h1 class="title text-left text-uppercase"><%= @product.name %></h1>
+<div class="price"><%= number_to_currency @product.price %></div>
+<div class="rating">
+  <%= render "ratings/rating" %>
+</div>
+<% if logged_in? && @product.not_rated?(current_user)  %>
+  <%= render "form_rating" %>
+<% elsif logged_in? == false %>
+  <p class="notice"><%= t ".notice_log_in_to_rate" %></p>
+<% end %>
+<div class="quantity"><%= t ".quantity" %>: <%= @product.quantity %></div>
+<% if @product.quantity > 0 %>
+  <div class="add-to-cart">
+    <% if logged_in? %>
+      <%= render "form_add_to_cart" %>
+    <% else %>
+      <p class="notice"><%= t ".notice_log_in_to_add" %></p>
+    <% end %>
+  </div>
+<% end %>

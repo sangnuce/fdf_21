@@ -10,3 +10,6 @@ ratings:
   round: 2
 carts:
   min_amount: 1
+orders:
+  min_quantity: 1
+  amount_round: 2

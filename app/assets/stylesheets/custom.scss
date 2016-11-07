@@ -238,6 +238,10 @@ input {
 }
 
 .product-detail {
+  .notice {
+    color: #D60808;
+    font-style: italic;
+  }
   .product-picture img {
     width: 100%;
   }
@@ -261,6 +265,13 @@ input {
   }
   .quantity {
     padding: 5px 0 10px 0;
+  }
+  .add-to-cart{
+    form {
+      button {
+        margin-bottom: 15px;
+      }
+    }
   }
   .description {
     h3.title {
@@ -295,6 +306,21 @@ input {
     margin: 0;
     border-bottom: 1px solid #696060;
     font-weight: bold;
+  }
+  .cart-items {
+    margin-bottom: 5px;
+    border-bottom: 1px solid #696060;
+    .cart-item {
+      padding-top: 5px;
+    }
+  }
+  .total-amount {
+    font-weight: bold;
+    margin-bottom: 10px;
+    .amount {
+      color: #FC0000;
+      font-size: 18px;
+    }
   }
 }
 

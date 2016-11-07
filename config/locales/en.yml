@@ -80,19 +80,30 @@ en:
       name: "Name"
     show:
       home: "Home"
-      add_to_cart: "Add to cart"
-      enter_a_number: "Enter a number"
-      rate: "Rate"
-      vote: "vote"
-      rating: "Rating"
       description: "Description"
       comment: "Comment"
       cart: "Cart"
-      quantity: "Quantity"
-      notice_login_to_rate: "Please log in to rate."
-  ratings:
-    create:
+    cart:
+      total_amount: "Total amount"
+    form_add_to_cart:
+      add_to_cart: "Add to cart"
+      enter_a_number: "Enter a number"
+    form_rating:
+      rate: "Rate"
+    product_detail:
       vote: "vote"
+      rating: "Rating"
+      quantity: "Quantity"
+      notice_log_in_to_add: "Please log in to add product to cart"
+      notice_log_in_to_rate: "Please log in to rate product"
+  ratings:
+    rating:
+      vote: "vote"
+  carts:
+    cart:
+      enter_a_number: "Enter a number"
+      update: "Update"
+      order: "Order"
   flash:
     account_not_active: "Account not activated. Check your email for
       the activation link."
@@ -125,7 +136,13 @@ en:
     rate_fail: "Rate fail."
     order_not_found: "Order not found!"
     update_order_success: "Update order success."
-    cant_update_order: "Can't update order."
+    cant_update_order: "Cannot update order."
+    add_product_to_cart_success: "Add product to cart success."
+    add_product_to_cart_fail: "Add product to cart fail."
+    update_product_in_cart_success: "Update product in cart success."
+    update_product_in_cart_fail: "Update product in cart fail."
+    delete_product_in_cart_success: "Delete product in cart success."
+    delete_product_in_cart_fail: "Delete product in cart fail."
   mailer:
     active_account: "Account activation"
     activate: "Activate"

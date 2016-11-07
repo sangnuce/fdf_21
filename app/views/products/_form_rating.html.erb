@@ -1,0 +1,7 @@
+<%= form_for @supports.rating, url: product_ratings_path(@product, @rating),
+  html: {remote: true, class: "form-inline", id: "rating-form"} do |f| %>
+  <%= f.select :rate,
+    options_for_select(Settings.ratings.min_rate..Settings.ratings.max_rate,
+    params[:rate]), {}, class: "form-control" %>
+  <%= f.submit t(".rate"), class: "btn-warning form-control" %>
+<% end %>

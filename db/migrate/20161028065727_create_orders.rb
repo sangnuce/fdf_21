@@ -7,12 +7,11 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.datetime :delivery_time
       t.text :remarks
       t.integer :order_amount
-      t.integer :status
+      t.integer :status, default: 0
       t.references :user, foreign_key: true
 
       t.timestamps
     end
     add_index :orders, [:user_id, :created_at]
-    change_column :orders, :status, :integer, default: 0
   end
 end

@@ -22,6 +22,30 @@ class Supports::Product < ApplicationController
   end
 
   def rating
-    @rating = Rating.new
+    Rating.new
+  end
+
+  def cart_item
+    Order.new
+  end
+
+  def cart_items
+    @cart = Hash.new
+    @params[:cart] ||= Hash.new
+    @params[:cart].each do |product_id, quantity|
+      product = Product.find_by id: product_id
+      @cart[product] = quantity if product
+    end
+    @cart
+  end
+
+  def cart_amount
+    @amount = 0
+    @params[:cart] ||= Hash.new
+    @params[:cart].each do |product_id, quantity|
+      product = Product.find_by id: product_id
+      @amount += product.price * quantity.to_i if product
+    end
+    @amount
   end
 end
