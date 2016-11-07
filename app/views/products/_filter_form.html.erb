@@ -30,7 +30,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-2">
+          <%= label_tag t(".name") %>
+        </div>
+        <div class="col-md-6">
           <%= text_field_tag :name, params[:name],
             class: "form-control", placeholder: t(".enter_name") %>
         </div>

@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  ATTRIBUTE_PARAMS = [:name, :price, :quantity, :picture, :category_id]
+  ATTRIBUTE_PARAMS = [:name, :price, :quantity, :picture, :category_id, :description]
 
   enum status: {available: 1, not_available: 0}
 
@@ -11,7 +11,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_products
 
   scope :order_desc, ->{order created_at: :desc}
-  scope :in_classify, ->(classify){ joins(:category)
+  scope :in_classify, ->(classify){joins(:category)
     .where "classify = ?", Category.classifies[classify] if classify.present?}
   scope :order_rating, ->(rule){order rating: rule if rule.present?}
   scope :price_between, ->(from, to){where "price BETWEEN ? AND ?", from, to if from.present? && to.present?}
