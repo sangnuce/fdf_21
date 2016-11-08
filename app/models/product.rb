@@ -30,6 +30,10 @@ class Product < ApplicationRecord
 
   after_update :update_child
 
+  def not_rated? user
+    return self.ratings.find_by(user: user) ? false : true
+  end
+
   private
   def picture_size
     errors.add :picture, I18n.t("picture.error_picture_size") if

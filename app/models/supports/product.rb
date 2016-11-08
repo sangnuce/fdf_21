@@ -1,8 +1,6 @@
 class Supports::Product < ApplicationController
-  attr_reader :params
-
   def initialize params
-    @params = params
+    @params = params[:params]
   end
 
   def classifies
@@ -16,10 +14,14 @@ class Supports::Product < ApplicationController
   end
 
   def categories
-    @categories = unless params[:classify].blank?
-      Category.send params[:classify]
+    @categories = unless @params[:classify].blank?
+      Category.send @params[:classify]
     else
       Category.all
     end
+  end
+
+  def rating
+    @rating = Rating.new
   end
 end

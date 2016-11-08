@@ -7,5 +7,6 @@ products:
 ratings:
   min_rate: 1
   max_rate: 5
+  round: 2
 carts:
   min_amount: 1

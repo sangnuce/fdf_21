@@ -88,6 +88,11 @@ en:
       description: "Description"
       comment: "Comment"
       cart: "Cart"
+      quantity: "Quantity"
+      notice_login_to_rate: "Please log in to rate."
+  ratings:
+    create:
+      vote: "vote"
   flash:
     account_not_active: "Account not activated. Check your email for
       the activation link."
@@ -116,6 +121,8 @@ en:
     update_product_success: "Update product success."
     product_not_found: "Product not found."
     delete_product: "Product deleted."
+    rate_success: "Rate success."
+    rate_fail: "Rate fail."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -221,8 +228,8 @@ en:
   number:
     currency:
       format:
-        unit: "VND"
+        unit: "$"
         delimiter: ","
         separator: "."
         precision: 0
-        format: "%n %u"
+        format: "%u%n"

@@ -18,15 +18,19 @@
       <div class="col-md-9 col-sm-8">
         <h1 class="title text-left text-uppercase"><%= @product.name %></h1>
         <div class="price"><%= number_to_currency @product.price %></div>
-        <div class="rating"><%= t".rating" %>
-          <%= @product.rating %>/<%= Settings.ratings.max_rate %>
+        <div class="rating"><%= t".rating" %>:
+          <%= @product.rating.round Settings.ratings.round %>/<%= Settings.ratings.max_rate %>
           (<%= pluralize @product.ratings.count, t(".vote") %>)</div>
-          <%= form_tag product_path(@product), remote: true, class: "form-inline" do %>
-            <%= select_tag :rate,
+        <% if logged_in? && @product.not_rated?(current_user)  %>
+          <%= form_for @supports.rating, url: product_ratings_path(@product, @rating),
+            html: {remote: true, class: "form-inline", id: "rating-form"} do |f| %>
+            <%= f.select :rate,
               options_for_select(Settings.ratings.min_rate..Settings.ratings.max_rate,
-              params[:rate]), class: "form-control" %>
-            <%= submit_tag t(".rate"), class: "btn-warning form-control" %>
+              params[:rate]), {}, class: "form-control" %>
+            <%= f.submit t(".rate"), class: "btn-warning form-control" %>
           <% end %>
+        <% end %>
+        <div class="quantity"><%= t ".quantity" %>: <%= @product.quantity %></div>
         <div class="add-to-cart">
           <%= form_tag product_path(@product), remote: true, class: "form-inline" do %>
             <%= number_field_tag :order_amount, params[:order_amount],

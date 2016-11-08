@@ -1,0 +1,3 @@
+<%= t".rating" %>
+<%= @product.rating.round Settings.ratings.round %>/<%= Settings.ratings.max_rate %>
+(<%= pluralize @product.ratings.count, t(".vote") %>)
