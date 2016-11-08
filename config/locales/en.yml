@@ -123,6 +123,9 @@ en:
     delete_product: "Product deleted."
     rate_success: "Rate success."
     rate_fail: "Rate fail."
+    order_not_found: "Order not found!"
+    update_order_success: "Update order success."
+    cant_update_order: "Can't update order."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -221,6 +224,37 @@ en:
       search_form:
         search: "Search"
         placeholder_product: "Enter product name"
+    orders:
+      index:
+        title: "Order management"
+        orderer: "Orderer"
+        order_time: "Order time"
+        receiver: "Receiver"
+        receiver_phone: "Receiver phone"
+        delivery_time: "Delivery time"
+        status: "Status"
+        detail: "Detail"
+      order:
+        detail: "Detail"
+      search_form:
+        placeholder_order: "Enter receiver phone"
+        search: "Search"
+      edit:
+        title: "Update status"
+      show:
+        title: "Order detail"
+        receiver_infomation: "Receiver infomation"
+      receiver_infomation:
+        address: "Address"
+        phone: "Phone"
+        remarks: "Remarks"
+        edit: "Edit"
+      order_details:
+        product: "Product"
+        quantity: "Quantity"
+        price: "Price"
+        amount: "Amount"
+        total: "Total"
   picture:
     error_picture_size: "should be less than 5MB"
   data:

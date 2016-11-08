@@ -41,7 +41,9 @@ class Product < ApplicationRecord
   end
 
   def update_child
-    self.comments.update_all status: "not_available"
-    self.ratings.update_all status: "not_available"
+    if self.not_available?
+      self.comments.update_all status: "not_available"
+      self.ratings.update_all status: "not_available"
+    end
   end
 end
