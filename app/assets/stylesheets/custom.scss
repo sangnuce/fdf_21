@@ -297,3 +297,17 @@ input {
     font-weight: bold;
   }
 }
+
+/* Order detail */
+table{
+  .total_bill{
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.receiver_infomation{
+  th{
+    width: 35%;
+  }
+}
