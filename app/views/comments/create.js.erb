@@ -1,0 +1,3 @@
+$('.comment-list').prepend("<%= j render @product.comments.order_desc.first %>");
+$('.comment-form').html("<%= j render 'comments/form' %>");
+$('.comment_content').val('');

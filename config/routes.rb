@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :carts, only: :update
   resources :products, only: [:index, :show] do
     resources :ratings, only: :create
+    resources :comments, only: [:create, :destroy]
   end
 
   namespace :admin do

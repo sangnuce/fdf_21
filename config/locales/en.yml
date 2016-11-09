@@ -96,6 +96,9 @@ en:
       quantity: "Quantity"
       notice_log_in_to_add: "Please log in to add product to cart"
       notice_log_in_to_rate: "Please log in to rate product"
+      notice_login_to_rate: "Please log in to rate."
+      cant_comment: "You must login to comment."
+    delete: "Delete"
   ratings:
     rating:
       vote: "vote"
@@ -143,6 +146,11 @@ en:
     update_product_in_cart_fail: "Update product in cart fail."
     delete_product_in_cart_success: "Delete product in cart success."
     delete_product_in_cart_fail: "Delete product in cart fail."
+    cant_update_order: "Can't update order."
+    comment_success: "Comment success."
+    cant_comment: "Can't comment."
+    delete_comment: "Comment deleted."
+    cant_delete_comment: "Comment can't delete."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -284,3 +292,7 @@ en:
         separator: "."
         precision: 0
         format: "%u%n"
+  time:
+    zone: 7
+    formats:
+      default: "%d/%m/%Y at %H:%M"

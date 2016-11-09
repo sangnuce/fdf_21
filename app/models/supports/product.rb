@@ -1,6 +1,7 @@
 class Supports::Product < ApplicationController
   def initialize params
     @params = params[:params]
+    @product = params[:product]
   end
 
   def classifies
@@ -47,5 +48,9 @@ class Supports::Product < ApplicationController
       @amount += product.price * quantity.to_i if product
     end
     @amount
+  end
+
+  def comment
+    Comment.new
   end
 end

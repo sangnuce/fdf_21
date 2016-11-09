@@ -285,18 +285,6 @@ input {
       padding: 10px 0;
     }
   }
-  .comment {
-    h3.title {
-      font-size: 16px;
-      padding: 10px 0;
-      margin: 0;
-      border-bottom: 1px solid #696060;
-      font-weight: bold;
-    }
-    .content {
-      padding: 10px 0;
-    }
-  }
 }
 
 .cart {
@@ -335,5 +323,43 @@ table{
 .receiver_infomation{
   th{
     width: 35%;
+  }
+}
+
+/* Comment */
+
+.comment {
+  h3.title {
+    font-size: 16px;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid #696060;
+    font-weight: bold;
+  }
+  .comment-form{
+    padding: 10px 0;
+    p {
+      color: #D60808;
+    }
+  }
+  .submit{
+    width: 15%;
+    float: right;
+  }
+  .comment-list{
+    margin-top: 25px;
+    .comment-product{
+      border-bottom: 2px dotted #eee;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      .comment-name{
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .comment-time{
+        color: #a9a9a9;
+        font-size: 12px;
+      }
+    }
   }
 }
