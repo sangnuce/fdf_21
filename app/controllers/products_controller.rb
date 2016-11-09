@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: :show
-  before_action :create_supports, only: [:index, :show]
 
   def index
     @supports = Supports::Product.new params: params
@@ -20,6 +19,8 @@ class ProductsController < ApplicationController
 
   def show
     @supports = Supports::Product.new params: session
+    @comments = @product.comments.order_desc.paginate page: params[:page],
+      per_page: Settings.products.comments_per_page
   end
 
   private
