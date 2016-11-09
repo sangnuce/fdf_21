@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :create_supports, only: [:index, :show]
   before_action :find_product, only: :show
 
   def index
+    @supports = Supports::Product.new params: params
     @products = Product.available.in_classify(params[:classify])
       .belongs_to_category(params[:category_id])
       .price_between(params[:from_price], params[:to_price])
@@ -18,18 +18,15 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @supports = Supports::Product.new params: session
   end
 
   private
   def find_product
     @product = Product.find_by id: params[:id]
-    if @product.nil?
+    if @product.nil? || @product.not_available?
       flash[:danger] = t "flash.product_not_found"
       redirect_to products_path
     end
-  end
-
-  def create_supports
-    @supports = Supports::Product.new params: params
   end
 end

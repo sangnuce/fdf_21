@@ -5,15 +5,13 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :picture
       t.integer :price
       t.integer :quantity
-      t.float :rating
+      t.float :rating, default: 0
       t.text :description
-      t.integer :status
+      t.integer :status, default: 1
       t.references :category, foreign_key: true
 
       t.timestamps
     end
     add_index :products, :name, unique: true
-    change_column :products, :rating, :float, default: 0
-    change_column :products, :status, :integer, default: 1
   end
 end

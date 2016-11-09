@@ -1,0 +1,37 @@
+<div class="cart-items">
+  <% @supports.cart_items.each do |product, quantity| %>
+    <%= form_for @supports.cart_item, url: cart_path(product),
+        html: {remote: true, method: :patch} do |f| %>
+      <div class="row cart-item">
+        <div class="col-md-5"><%= product.name %></div>
+        <div class="col-md-3">
+          <%= f.number_field :quantity, value: quantity,
+            class: "form-control", min: Settings.orders.min_quantity,
+            placeholder: t(".enter_a_number"), required: :required %>
+        </div>
+        <div class="col-md-2">
+          <%= f.button name: :service_type, value: :update, type: :submit,
+            class: "btn btn-info" do %>
+            <span class="glyphicon glyphicon-floppy-disk"></span>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+          <%= f.button name: :service_type, value: :delete, type: :submit,
+            class: "btn btn-danger", data: {confirm: t("data.confirm")} do %>
+            <span class="glyphicon glyphicon-trash"></span>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row total-amount">
+  <div class="col-xs-6 text-right"><%= t ".total_amount" %></div>
+  <div class="col-xs-6 text-right">
+    <span class="amount"><%= number_to_currency @supports.cart_amount %></span>
+  </div>
+</div>
+<div class="text-right">
+  <%= link_to t(".order"), "#", class: "btn btn-warning" %>
+</div>
