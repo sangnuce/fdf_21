@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @product.comments.build comment_params
     if @comment.save
-      @supports = Supports::Product.new params
+      @supports = Supports::ProductSupport.new params: params
       respond_to do |format|
         format.html do
           flash[:success] = t "flash.comment_success"

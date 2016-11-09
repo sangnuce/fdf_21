@@ -10,19 +10,25 @@ class RemoveItemFromCart
 
   private
   def remove_item
-    success = false
-    if available_item?
-      success = true
-      @cart ||= Hash.new
-      @cart.delete @item.id.to_s
+    success = if available_item?
+      @cart.delete_if {|item| item["product_id"] == @item.id}
+      true
+    else
+      false
     end
-    @flash = success ? :success : :danger
-    @message = success ? "flash.delete_product_in_cart_success" :
-      "flash.delete_product_in_cart_fail"
-    {success: success, hash_data: @cart, flash: @flash, message: @message}
+
+    if success
+      flash = :success
+      message = I18n.t "flash.delete_product_in_cart_success"
+    else
+      flash = :danger
+      message = I18n.t "flash.delete_product_in_cart_fail"
+    end
+
+    {success: success, cart: @cart, flash: flash, message: message}
   end
 
   def available_item?
-    @cart[@item.id.to_s].present?
+    @cart.any? {|item| item["product_id"] == @item.id}
   end
 end

@@ -140,6 +140,31 @@ en:
       enter_a_number: "Enter a number"
       update: "Update"
       order: "Order"
+  orders:
+    new:
+      title: "Order information"
+      receiver_name: "Receiver name"
+      receiver_address: "Receiver address"
+      receiver_phone: "Receiver phone"
+      delivery_time: "Delivery time"
+      remarks: "Remarks"
+      order: "Order"
+    show:
+      title: "Order detail"
+      receiver_information: "Receiver Information"
+    receiver_information:
+      receiver_name: "Name"
+      receiver_address: "Address"
+      receiver_phone: "Phone"
+      delivery_time: "Delivery time"
+      status: "Status"
+    order_details:
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      amount: "Amount"
+      total: "Total"
+    cant_be_in_the_past: "can't be in the past"
   flash:
     account_not_active: "Account not activated. Check your email for
       the activation link."
@@ -185,10 +210,11 @@ en:
     delete_comment: "Comment deleted."
     cant_delete_comment: "Comment can't delete."
     delete_product_suggest_success: "Delete product suggests success."
-    product_suggest_not_found: "Product suggest not found"
     send_suggest_success: "Send suggest success."
     send_email_success: "Send email success"
     cant_accept: "Can't accept."
+    product_suggest_not_found: "Product suggest not found."
+    order_products_success: "Order products success."
   mailer:
     active_account: "Account activation"
     activate: "Activate"

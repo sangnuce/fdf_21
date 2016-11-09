@@ -11,22 +11,25 @@ class AddItemToCart
 
   private
   def add_item
-    success = false
-    if available_quantity?
-      success = true
-      @cart ||= Hash.new
-      @cart[@item.id.to_s] = @quantity
+    success = if available_quantity?
+      @cart << {"product_id" => @item.id, "quantity" => @quantity, "price" => @item.price}
+      true
+    else
+      false
     end
 
-    @flash = success ? :success : :danger
-    @message = success ? "flash.add_product_to_cart_success" :
-      "flash.add_product_to_cart_fail"
-    {success: success, hash_data: @cart, flash: @flash, message: @message}
+    if success
+      flash = :success
+      message = I18n.t "flash.add_product_to_cart_success"
+    else
+      flash = :danger
+      message = I18n.t "flash.add_product_to_cart_fail"
+    end
+
+    {success: success, cart: @cart, flash: flash, message: message}
   end
 
   def available_quantity?
-    quantity = @cart[@item.id.to_s] || 0
-    @quantity += quantity
     @item.quantity >= @quantity
   end
 end

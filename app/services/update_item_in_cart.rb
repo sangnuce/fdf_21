@@ -11,16 +11,27 @@ class UpdateItemInCart
 
   private
   def update_item
-    success = false
-    if available_quantity?
-      success = true
-      @cart ||= Hash.new
-      @cart[@item.id.to_s] = @quantity
+    success =  if available_quantity?
+      @cart.each_with_index do |item, index|
+        if item["product_id"] == @item.id
+          @cart[index]["quantity"] = @quantity
+          break
+        end
+      end
+      true
+    else
+      false
     end
-    @flash = success ? :success : :danger
-    @message = success ? "flash.update_product_in_cart_success" :
-      "flash.update_product_in_cart_fail"
-    {success: success, hash_data: @cart, flash: @flash, message: @message}
+
+    if success
+      flash = :success
+      message = I18n.t "flash.update_product_in_cart_success"
+    else
+      flash = :danger
+      message = I18n.t "flash.update_product_in_cart_fail"
+    end
+
+    {success: success, cart: @cart, flash: flash, message: message}
   end
 
   def available_quantity?

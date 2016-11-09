@@ -9,10 +9,12 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: :edit
   resources :password_resets, except: [:index, :show, :destroy]
-  resources :users, only: [:show, :edit, :update] do
-    resources :orders
-  end
   resources :carts, only: :update
+
+  resources :users, only: [:show, :edit, :update] do
+    resources :orders, only: [:new, :create, :show]
+  end
+
   resources :products, only: [:index, :show] do
     resources :ratings, only: :create
     resources :comments, only: [:create, :destroy]
