@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: :show
+  before_action :create_supports, only: [:index, :show]
 
   def index
     @supports = Supports::Product.new params: params

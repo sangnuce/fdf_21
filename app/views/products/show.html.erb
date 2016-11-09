@@ -26,6 +26,16 @@
       </div>
       <div class="col-md-12 comment">
         <h3 class="title"><%= t ".comment" %></h3>
+        <div class="comment-form">
+          <% if logged_in? %>
+            <%= render "comments/form" %>
+          <% else %>
+            <p><%= t ".cant_comment" %></p>
+          <% end %>
+        </div>
+        <div class="comment-list">
+          <%= render @product.comments.order_desc %>
+        </div>
       </div>
     </div>
   </div>

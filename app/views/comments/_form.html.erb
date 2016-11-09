@@ -1,0 +1,4 @@
+<%= form_for [@product, @supports.comment], remote: true do |f| %>
+  <%= f.text_area :content, class: "form-control" %>
+  <%= f.submit t("products.show.comment"), class: "btn btn-primary submit" %>
+<% end %>
