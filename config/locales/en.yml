@@ -109,6 +109,17 @@ en:
       notice_login_to_rate: "Please log in to rate."
       cant_comment: "You must login to comment."
     delete: "Delete"
+  orders:
+    show:
+      title: "Order detail"
+      receiver_infomation: "Receiver infomation"
+      address: "Address"
+      remarks: "Remarks"
+      product: "Product"
+      quantity: "Quantity"
+      price: "Price"
+      amount: "Amount"
+      total: "Total"
   ratings:
     rating:
       vote: "vote"

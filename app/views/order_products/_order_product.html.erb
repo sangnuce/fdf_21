@@ -1,0 +1,26 @@
+<table class="table table-hover table-responsive table-striped">
+  <thead>
+    <tr>
+      <th><%= t "orders.show.product" %></th>
+      <th><%= t "orders.show.quantity" %></th>
+      <th><%= t "orders.show.price" %></th>
+      <th><%= t "orders.show.amount" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order_details.each do |item| %>
+      <tr>
+        <td><%= item.product.name %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency item.price %></td>
+        <td><%= number_to_currency item.price*item.quantity %></td>
+      </tr>
+    <% end %>
+    <tr class="total_bill">
+      <td></td>
+      <td></td>
+      <td><span class="pull-right"><%= t "orders.show.total" %></span></td>
+      <td><%= number_to_currency @order.order_amount %></td>
+    </tr>
+  </tbody>
+</table>
