@@ -1,30 +1,28 @@
 <table class="table table-responsive receiver_infomation">
   <tr>
-    <th><%= t "admin.orders.index.receiver" %></th>
+    <th><%= t "users.show.receiver" %></th>
     <td><%= @order.receiver_name %></td>
   </tr>
   <tr>
-    <th><%= t ".address" %></th>
+    <th><%= t "orders.show.address" %></th>
     <td><%= @order.receiver_address %></td>
   </tr>
   <tr>
-    <th><%= t ".phone" %></th>
+    <th><%= t "users.show.phone" %></th>
     <td><%= @order.receiver_phone %></td>
   </tr>
   <tr>
-    <th><%= t "admin.orders.index.delivery_time" %></th>
+    <th><%= t "users.show.delivery_time" %></th>
     <td><%= l @order.delivery_time %></td>
   </tr>
   <tr>
-    <th><%= t ".remarks" %></th>
+    <th><%= t "orders.show.remarks" %></th>
     <td><%= @order.remarks %></td>
   </tr>
   <tr>
-    <th><%= t "admin.orders.index.status" %></th>
+    <th><%= t "users.show.status" %></th>
     <td>
       <%= @order.status %>
-      <%= link_to t(".edit"), edit_admin_order_path(@order),
-        class: "btn btn-info pull-right" %>
     </td>
   </tr>
 </table>
