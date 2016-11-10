@@ -312,6 +312,29 @@ input {
   }
 }
 
+.suggest-product {
+  margin: 25px 0;
+  a {
+    color: #fff;
+    font-size: 15px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .suggest-button {
+    background-color: #F6A10C;
+    &:hover {
+      background-color: #F9B700;
+    }
+  }
+  span {
+    position: relative;
+    top: 7px;
+    font-size: 15px;
+    font-style: italic;
+  }
+}
+
 /* Order detail */
 table{
   .total_bill{

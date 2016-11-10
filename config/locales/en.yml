@@ -73,6 +73,9 @@ en:
       detail: "Detail"
     index:
       title: "Products"
+      suggest_product: "Suggest a product that you love and we'll list it on
+        the website."
+      suggest_product_button: "Suggest product"
     filter_form:
       select_all: "All"
       classify: "Classify"
@@ -94,6 +97,7 @@ en:
       comment: "Comment"
       cart: "Cart"
       ago: "ago"
+      cant_comment: "Please login to comment."
     cart:
       total_amount: "Total amount"
     form_add_to_cart:
@@ -110,6 +114,13 @@ en:
       notice_login_to_rate: "Please log in to rate."
       cant_comment: "You must login to comment."
     delete: "Delete"
+  product_suggests:
+    new:
+      title: "Suggest product"
+    form:
+      name: "Name"
+      description: "Description"
+      suggest: "Suggest"
   orders:
     show:
       title: "Order detail"
@@ -175,6 +186,7 @@ en:
     cant_delete_comment: "Comment can't delete."
     delete_product_suggest_success: "Delete product suggests success."
     product_suggest_not_found: "Product suggest not found"
+    send_suggest_success: "Send suggest success."
   mailer:
     active_account: "Account activation"
     activate: "Activate"

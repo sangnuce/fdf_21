@@ -4,6 +4,11 @@
   <div class="col-md-12 filter-products">
     <%= render "filter_form" %>
   </div>
+  <div class="col-md-12 suggest-product">
+    <div class="btn suggest-button"><%= link_to t(".suggest_product_button"),
+      new_product_suggest_path%></div>
+    <span><%= t ".suggest_product" %></span>
+  </div>
   <div class="col-md-12">
     <div class="row" id="products">
       <%= render @products %>
