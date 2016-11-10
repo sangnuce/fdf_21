@@ -1,10 +1,10 @@
 <tr>
-  <td><%= order.user.name %></td>
   <td><%= l order.created_at %></td>
   <td><%= order.receiver_name %></td>
+  <td><%= order.receiver_address %></td>
   <td><%= order.receiver_phone %></td>
   <td><%= l order.delivery_time %></td>
   <td><%= order.status %></td>
-  <td><%= link_to t(".detail"), admin_order_path(order),
+  <td><%= link_to t("users.show.detail"), user_order_path(@user, order),
     class: "btn btn-info" %></td>
 </tr>

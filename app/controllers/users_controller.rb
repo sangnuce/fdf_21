@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @orders = @user.orders.order_desc.paginate page: params[:page],
+      per_page: Settings.users.order_per_page
   end
 
   def edit

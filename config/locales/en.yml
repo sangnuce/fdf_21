@@ -55,6 +55,15 @@ en:
       email: "Email"
       phone: "Phone"
       edit_user: "Edit profile"
+      user_infomation: "User infomation"
+      order_history: "Order history"
+      order_time: "Order time"
+      receiver: "Receiver"
+      receiver_address: "Address"
+      receiver_phone: "Phone"
+      delivery_time: "Delivey time"
+      status: "Status"
+      detail: "Detail"
     edit:
       title: "Edit user profile"
       edit_user: "Update profile"
@@ -83,6 +92,7 @@ en:
       description: "Description"
       comment: "Comment"
       cart: "Cart"
+      ago: "ago"
     cart:
       total_amount: "Total amount"
     form_add_to_cart:
@@ -295,4 +305,4 @@ en:
   time:
     zone: 7
     formats:
-      default: "%d/%m/%Y at %H:%M"
+      default: "%d/%m/%Y %H:%M"

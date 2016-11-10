@@ -34,7 +34,10 @@
           <% end %>
         </div>
         <div class="comment-list">
-          <%= render @product.comments.order_desc %>
+          <%= render @comments %>
+          <div class="text-center">
+            <%= will_paginate @comments %>
+          </div>
         </div>
       </div>
     </div>
