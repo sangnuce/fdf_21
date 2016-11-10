@@ -12,6 +12,7 @@ en:
       setting: "Setting"
       signup: "Sign up"
       logo_alt: "Foods and Drinks logo"
+      product_suggests: "Product suggest"
     footer:
       name: "Project Foods and drinks"
     base_title: "Foods and drinks"
@@ -172,6 +173,8 @@ en:
     cant_comment: "Can't comment."
     delete_comment: "Comment deleted."
     cant_delete_comment: "Comment can't delete."
+    delete_product_suggest_success: "Delete product suggests success."
+    product_suggest_not_found: "Product suggest not found"
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -301,6 +304,13 @@ en:
         price: "Price"
         amount: "Amount"
         total: "Total"
+    product_suggests:
+      index:
+        title: "Product suggests"
+        name: "Name"
+        description: "Description"
+        user_suggest: "User suggests"
+        delete: "Delete"
   picture:
     error_picture_size: "should be less than 5MB"
   data:

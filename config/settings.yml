@@ -16,3 +16,5 @@ orders:
   amount_round: 2
 users:
   order_per_page: 10
+product_suggests:
+  product_suggest_per_page: 10
