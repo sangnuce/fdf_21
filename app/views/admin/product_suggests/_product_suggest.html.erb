@@ -1,0 +1,10 @@
+<tr>
+  <td><%= product_suggest.name %></td>
+  <td><%= product_suggest.description %></td>
+  <td><%= product_suggest.user.name %></td>
+  <td>
+    <%= link_to t("admin.product_suggests.index.delete"),
+      admin_product_suggest_path(product_suggest), class: "btn btn-danger",
+      method: :delete, data: {confirm: t("data.confirm")} %>
+  </td>
+</tr>
