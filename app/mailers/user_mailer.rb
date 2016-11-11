@@ -13,4 +13,10 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: t("mailer.product_suggest_accept")
   end
+
+  def new_order user, order
+    @user = user
+    @order = order
+    mail to: user.email, subject: t("mailer.new_order")
+  end
 end

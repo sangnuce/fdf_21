@@ -18,6 +18,7 @@ class OrdersController < ApplicationController
     end
 
     if @order.save
+      @order.send_new_order_email
       session.delete :order_products_attributes
       flash[:success] = t "flash.order_products_success"
       redirect_to user_order_path(@user, @order)
