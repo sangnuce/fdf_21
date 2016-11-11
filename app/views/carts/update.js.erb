@@ -1,5 +1,5 @@
 <% if @result[:success] %>
   $('#cart-items').html('<%= j render "cart" %>');
 <% else %>
-  alert('<%= t @result[:message] %>');
+  alert('<%= @result[:message] %>');
 <% end %>

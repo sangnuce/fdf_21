@@ -1,5 +1,5 @@
 <tr>
-  <td><%= l order.created_at %></td>
+  <td><%= l order.created_at.in_time_zone(t "time.zone") %></td>
   <td><%= order.receiver_name %></td>
   <td><%= order.receiver_address %></td>
   <td><%= order.receiver_phone %></td>

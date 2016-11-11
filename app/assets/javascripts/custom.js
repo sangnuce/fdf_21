@@ -2,6 +2,16 @@ function createOption(value, display){
   return '<option value="' + value + '">' + display + '</option>';
 }
 
+function getCurrentDateTime(){
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth() + 1;
+  var year = date.getFullYear();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  return day + '/' + month + '/' + year + ' ' + hour + '/' + minute;
+}
+
 $(document).on('turbolinks:load', function(){
   $('#classify_filter').change(function(){
     var value = $(this).val();
@@ -18,5 +28,16 @@ $(document).on('turbolinks:load', function(){
         $('#category_id_filter').html(options);
       }
     });
+  });
+
+  var datetimepicker_value = $('.datetimepicker_mark').attr('value');
+  if(typeof datetimepicker_value == 'undefined'){
+    datetimepicker_value = getCurrentDateTime();
+  }
+  $('.datetimepicker_mark').datetimepicker({
+    format: 'd/m/Y H:i',
+    value: datetimepicker_value,
+    step: $('.datetimepicker_mark').attr('data-step'),
+    minDate: $('.datetimepicker_mark').attr('data-min-date'),
   });
 });

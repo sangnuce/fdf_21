@@ -1,0 +1,33 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".title" %></h1>
+<div class="row">
+  <%= form_for [@user, @order] do |f| %>
+    <div class="form-group">
+      <%= render "shared/error_messages", object: f.object %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t(".receiver_name") %>
+      <%= f.text_field :receiver_name, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t(".receiver_address") %>
+      <%= f.text_field :receiver_address, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t(".receiver_phone") %>
+      <%= f.text_field :receiver_phone, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t(".delivery_time") %>
+      <%= f.text_field :delivery_time, class: "form-control datetimepicker_mark",
+        data: {min_date: Date.today, step: 15} %>
+    </div>
+    <div class="form-group col-md-12">
+      <%= f.label t(".remarks") %>
+      <%= f.text_area :remarks, class: "form-control" %>
+    </div>
+    <div class="col-md-12 text-right">
+      <%= f.button t(".order"), type: :submit, class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :find_product, only: :show
 
   def index
-    @supports = Supports::Product.new params: params
+    @supports = Supports::ProductSupport.new params: params
     @products = Product.available.in_classify(params[:classify])
       .belongs_to_category(params[:category_id])
       .price_between(params[:from_price], params[:to_price])
@@ -18,9 +18,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @supports = Supports::Product.new params: session
     @comments = @product.comments.order_desc.paginate page: params[:page],
       per_page: Settings.products.comments_per_page
+    @supports = Supports::ProductSupport.new params: session
   end
 
   private
