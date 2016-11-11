@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :ratings, only: :create
     resources :comments, only: [:create, :destroy]
   end
+  resources :product_suggests, only: [:new, :create]
 
   namespace :admin do
     resources :categories, except: :show

@@ -1,0 +1,14 @@
+<%= form_for @product_suggest, url: product_suggests_path do |f| %>
+  <div class="form-group">
+    <%= render "shared/error_messages", object: f.object %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t(".description") %>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <%= f.submit t(".suggest"), class: "btn btn-primary" %>
+<% end %>
