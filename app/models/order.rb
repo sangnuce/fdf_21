@@ -18,10 +18,18 @@ class Order < ApplicationRecord
 
   accepts_nested_attributes_for :order_products
 
+  def send_new_order_email
+    @users = User.admin
+    @users.each do |user|
+      UserMailer.new_order(user, self).deliver_now
+    end
+  end
+
   private
   def delivery_time_cannot_be_in_the_past
     if delivery_time.present? && delivery_time < Time.zone.now
       errors.add :delivery_time, I18n.t("orders.cant_be_in_the_past")
     end
   end
+
 end
