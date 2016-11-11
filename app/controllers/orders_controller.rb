@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :logged_in_user
   before_action :find_user, only: [:new, :show, :create]
   before_action :correct_user, only: [:new, :create, :show]
+  before_action :cart_has_product, only: [:new, :create]
   before_action :find_order, only: :show
 
   def new
@@ -55,6 +56,14 @@ class OrdersController < ApplicationController
     if @order.nil?
       flash[:danger] = t "flash.order_not_found"
       redirect_to user_path(@user)
+    end
+  end
+
+  def cart_has_product
+    cart = session[:order_products_attributes] || Array.new
+    unless cart.any?
+      flash[:danger] = t "flash.cart_not_has_product"
+      redirect_to root_path
     end
   end
 end

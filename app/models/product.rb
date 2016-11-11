@@ -19,9 +19,11 @@ class Product < ApplicationRecord
   scope :order_name, ->(rule){order name: rule if rule.present?}
   scope :name_like, ->(name){where "products.name LIKE ?", "%#{name}%" if name.present?}
   scope :belongs_to_category, ->(category_id){where category_id: category_id if category_id.present?}
+  scope :belongs_to_no_category, ->{where category_id: nil}
 
   mount_uploader :picture, PictureUploader
 
+  validates :name, presence: true
   validates :price, presence: true, numericality: {greater_than_or_equal_to: 0}
   validates :quantity, presence: true, numericality:
     {greater_than_or_equal_to: 0}

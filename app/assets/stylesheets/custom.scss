@@ -237,11 +237,12 @@ input {
   width: 200px;
 }
 
+.notice {
+  color: #D60808;
+  font-style: italic;
+}
+
 .product-detail {
-  .notice {
-    color: #D60808;
-    font-style: italic;
-  }
   .product-picture img {
     width: 100%;
   }

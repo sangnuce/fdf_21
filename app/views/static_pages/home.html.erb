@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="row new-products margin-bottom-10">
-      <div class="col-md-12">
-        <h4 class="text-uppercase title"><%= t ".new_products" %></h4>
+    <% if @newest_products.any? %>
+      <div class="row new-products margin-bottom-10">
+        <div class="col-md-12">
+          <h4 class="text-uppercase title"><%= t ".new_products" %></h4>
+        </div>
+        <%= render @newest_products %>
       </div>
-      <%= render @newest_products %>
-    </div>
+    <% end %>
   </div>
   <div class="col-md-10 col-md-offset-1">
     <%= render @categories %>

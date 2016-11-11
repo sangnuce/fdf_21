@@ -30,7 +30,7 @@
           <% if logged_in? %>
             <%= render "comments/form" %>
           <% else %>
-            <p><%= t ".cant_comment" %></p>
+            <p class="notice"><%= t ".cant_comment" %></p>
           <% end %>
         </div>
         <div class="comment-list">

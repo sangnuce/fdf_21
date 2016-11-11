@@ -19,9 +19,18 @@
     <%= f.file_field :picture, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= label_tag t(".classify") %>
+    <%= select_tag :classify,
+      options_for_select(@supports.classifies, params[:classify]),
+      class: "form-control", include_blank: t(".select_all"),
+      id: "classify_filter", data: {url: products_path(:json)} %>
+  </div>
+  <div class="form-group">
     <%= f.label t(".category") %>
-    <%= f.select :category_id, options_for_select(@categories,
-      @product.category_id), {}, class: "form-control" %>
+    <%= f.select :category_id, options_from_collection_for_select(
+      @supports.categories, :id, :name, @product.category_id),
+      {include_blank: t(".select_category")},
+      {class: "form-control", id: "category_id_filter"} %>
   </div>
   <div class="form-group">
     <%= f.label t(".description") %>

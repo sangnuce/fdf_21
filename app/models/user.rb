@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   attr_accessor :remember_token, :reset_token, :activation_token
 
-  has_many :orders
+  has_many :orders, dependent: :nullify
   has_many :product_suggests, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :comments, dependent: :destroy

@@ -27,7 +27,8 @@ class Order < ApplicationRecord
 
   private
   def delivery_time_cannot_be_in_the_past
-    if delivery_time.present? && delivery_time < Time.zone.now
+    if delivery_time.present? &&
+      delivery_time < Time.zone.now + (I18n.t "time.zone").hours
       errors.add :delivery_time, I18n.t("orders.cant_be_in_the_past")
     end
   end

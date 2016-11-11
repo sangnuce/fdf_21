@@ -20,7 +20,7 @@ class Admin::UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       @user.activate
-      flash[:info] = t "flash.add_user_success"
+      flash[:success] = t "flash.add_user_success"
       redirect_to admin_users_path
     else
       render :new

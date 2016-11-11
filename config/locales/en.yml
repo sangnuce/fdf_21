@@ -39,6 +39,9 @@ en:
       signup: "Sign up"
       remember_me: "Remember me on this computer"
       forgot_password: "(forgot password)"
+  categories:
+    category:
+      view_all: "View all"
   users:
     new:
       title: "Sign up"
@@ -98,8 +101,6 @@ en:
       cart: "Cart"
       ago: "ago"
       cant_comment: "Please login to comment."
-    cart:
-      total_amount: "Total amount"
     form_add_to_cart:
       add_to_cart: "Add to cart"
       enter_a_number: "Enter a number"
@@ -137,9 +138,10 @@ en:
       vote: "vote"
   carts:
     cart:
+      total_amount: "Total amount"
       enter_a_number: "Enter a number"
-      update: "Update"
       order: "Order"
+      login_to_order: "Please log in to order."
   orders:
     new:
       title: "Order information"
@@ -215,6 +217,7 @@ en:
     cant_accept: "Can't accept."
     product_suggest_not_found: "Product suggest not found."
     order_products_success: "Order products success."
+    cart_not_has_product: "Cart doesn't has any products."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
@@ -318,8 +321,10 @@ en:
         price: "Price"
         quantity: "Quantity"
         picture: "Picture"
+        classify: "Classify"
         category: "Category"
         description: "Description"
+        select_category: "Select category"
       search_form:
         search: "Search"
         placeholder_product: "Enter product name"
@@ -335,7 +340,7 @@ en:
         detail: "Detail"
       order:
         detail: "Detail"
-        user_deleted: "User deleted"
+        user_deleted: "User has been deleted"
       search_form:
         placeholder_order: "Enter receiver phone"
         search: "Search"
@@ -362,6 +367,7 @@ en:
         description: "Description"
         user_suggest: "User suggests"
         delete: "Delete"
+        accept: "Accept"
   picture:
     error_picture_size: "should be less than 5MB"
   data:

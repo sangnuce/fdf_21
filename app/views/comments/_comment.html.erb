@@ -8,6 +8,6 @@
   <% if logged_in? &&
     (comment.user.current_user?(current_user) || current_user.admin?) %>
     <%= link_to t("products.delete"), product_comment_path(@product, comment),
-      remote: true, method: :delete %>
+      remote: true, method: :delete, data: {confirm: t("data.confirm")} %>
   <% end %>
 </div>
