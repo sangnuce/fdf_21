@@ -1,0 +1,7 @@
+<h1><%= t "mailer.new_order" %></h1>
+
+<p><%= t "mailer.hi" %> <%= @user.name %>,</p>
+
+<p><%= t "mailer.new_order_message" %></p>
+
+<%= link_to t("mailer.new_order"), admin_order_url(@order) %>

@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   scope :activated, ->{where activated: true}
   scope :name_like, ->(name){where "name LIKE ?", "%#{name}%"}
+  scope :admin, ->{where admin: true}
 
   has_secure_password
 

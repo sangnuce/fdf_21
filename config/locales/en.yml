@@ -231,6 +231,8 @@ en:
     Let's come back to"
     website: "website"
     to_order: "to order."
+    new_order: "New order"
+    new_order_message: "You have new order."
   shared:
     error_messages:
       form_contain: "The form contains"
@@ -277,9 +279,12 @@ en:
         email: "Email"
         phone: "Phone"
         role: "Role"
+        status: "Status"
       user:
         admin: "admin"
         customer: "customer"
+        activated: "activated"
+        not_activate: "not activate"
         edit: "Edit"
         delete: "Delete"
       new:
