@@ -61,9 +61,10 @@ ActiveRecord::Schema.define(version: 20161028081352) do
   create_table "product_suggests", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "status", default: 0
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_product_suggests_on_user_id"
   end
 

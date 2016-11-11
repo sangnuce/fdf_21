@@ -3,6 +3,13 @@
   <td><%= product_suggest.description %></td>
   <td><%= product_suggest.user.name %></td>
   <td>
+    <% if product_suggest.not_accept? %>
+      <%= link_to t("admin.product_suggests.index.accept"),
+        admin_product_suggest_path(product_suggest), class: "btn btn-info",
+        method: :put %>
+    <% end %>
+  </td>
+  <td>
     <%= link_to t("admin.product_suggests.index.delete"),
       admin_product_suggest_path(product_suggest), class: "btn btn-danger",
       method: :delete, data: {confirm: t("data.confirm")} %>
