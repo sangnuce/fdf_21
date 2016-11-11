@@ -56,7 +56,7 @@ en:
       email: "Email"
       phone: "Phone"
       edit_user: "Edit profile"
-      user_infomation: "User infomation"
+      user_infomation: "User information"
       order_history: "Order history"
       order_time: "Order time"
       receiver: "Receiver"
@@ -124,7 +124,7 @@ en:
   orders:
     show:
       title: "Order detail"
-      receiver_infomation: "Receiver infomation"
+      receiver_infomation: "Receiver information"
       address: "Address"
       remarks: "Remarks"
       product: "Product"
@@ -187,9 +187,12 @@ en:
     delete_product_suggest_success: "Delete product suggests success."
     product_suggest_not_found: "Product suggest not found"
     send_suggest_success: "Send suggest success."
+    send_email_success: "Send email success"
+    cant_accept: "Can't accept."
   mailer:
     active_account: "Account activation"
     activate: "Activate"
+    product_suggest_accept: "Product suggest accept"
     hi: "Hi"
     active_message: "Welcome to the Food and Drink website!
       Click on the link below to activate your account:"
@@ -198,6 +201,10 @@ en:
     expire_mail_reset: "This link will expire in two hours."
     mail_reset_message: "If you did not request your password to be reset,
       please ignore this email and your password will stay as it is."
+    product_suggest_message: "Product that you suggest was added to our menu.
+    Let's come back to"
+    website: "website"
+    to_order: "to order."
   shared:
     error_messages:
       form_contain: "The form contains"
@@ -304,8 +311,8 @@ en:
         title: "Update status"
       show:
         title: "Order detail"
-        receiver_infomation: "Receiver infomation"
-      receiver_infomation:
+        receiver_infomation: "Receiver information"
+      receiver_information:
         address: "Address"
         phone: "Phone"
         remarks: "Remarks"
